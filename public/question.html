@@ -75,14 +75,14 @@
 
             if (currentQ.answers.some(answer => userAnswer.includes(answer))) {
                 if (currentQuestionIndex === questions.length - 1) {
-                    // Last question answered correctly
+                    // Last question answered correctly - show celebration
                     resultMessage.textContent = '🎉 Tuyệt vời! Bạn đã trả lời đúng tất cả câu hỏi! Hãy cùng chúng tôi chúc mừng Ngày Phụ Nữ Việt Nam! 🎉';
                     resultMessage.className = 'result-message success';
                     resultMessage.style.display = 'block';
 
-                    // Redirect to main page after 3 seconds
+                    // Show celebration content after 3 seconds
                     setTimeout(() => {
-                        window.location.href = '/index.html';
+                        showCelebration();
                     }, 3000);
                 } else {
                     // Move to next question
@@ -120,6 +120,96 @@
         window.addEventListener('load', () => {
             answerInput.focus();
         });
+
+        function showCelebration() {
+            // Hide question content
+            document.getElementById('questionContainer').style.display = 'none';
+
+            // Create celebration content
+            const celebrationDiv = document.createElement('div');
+            celebrationDiv.className = 'celebration-container';
+            celebrationDiv.innerHTML = `
+                <div class="celebration-card">
+                    <h1>💖 Chúc Mừng Các Chị Em Phụ Nữ! 💖</h1>
+                    <p>Cảm ơn những người phụ nữ tuyệt vời đã và đang góp phần xây dựng đất nước Việt Nam giàu đẹp!</p>
+                    <img src="/images/ngày-phụnữviệt-nam-hội-liên-hiệp-phụnữviệt-nam.gif"
+                         alt="Vietnamese Women's Day Celebration"
+                         class="celebration-gif"
+                         loading="lazy">
+                </div>
+            `;
+
+            document.body.appendChild(celebrationDiv);
+
+            // Add celebration styles
+            const celebrationStyle = document.createElement('style');
+            celebrationStyle.textContent = `
+                .celebration-container {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(135deg, #ffcc00 0%, #ff6600 50%, #cc0000 100%);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    z-index: 1000;
+                }
+
+                .celebration-card {
+                    background: white;
+                    border-radius: 20px;
+                    padding: 40px;
+                    text-align: center;
+                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+                    max-width: 500px;
+                    width: 90%;
+                }
+
+                .celebration-card h1 {
+                    color: #cc0000;
+                    margin-bottom: 20px;
+                    font-size: 2rem;
+                }
+
+                .celebration-card p {
+                    color: #666;
+                    font-size: 1.1rem;
+                    margin-bottom: 25px;
+                    line-height: 1.6;
+                }
+
+                .celebration-gif {
+                    max-width: 100%;
+                    border-radius: 15px;
+                    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+                }
+            `;
+            document.head.appendChild(celebrationStyle);
+
+            // Create floating petals effect
+            setInterval(() => {
+                const petals = ['🌸', '🌺', '🌷', '💐', '🌹'];
+                const petal = document.createElement('div');
+                petal.textContent = petals[Math.floor(Math.random() * petals.length)];
+                petal.style.position = 'fixed';
+                petal.style.fontSize = '30px';
+                petal.style.left = Math.random() * window.innerWidth + 'px';
+                petal.style.top = window.innerHeight + 'px';
+                petal.style.pointerEvents = 'none';
+                petal.style.zIndex = '1001';
+                petal.style.animation = `floatPetal ${Math.random() * 3 + 2}s linear forwards`;
+
+                document.body.appendChild(petal);
+
+                setTimeout(() => {
+                    if (petal.parentNode) {
+                        petal.parentNode.removeChild(petal);
+                    }
+                }, 5000);
+            }, 1000);
+        }
 
         // Add some CSS for progress bar
         const style = document.createElement('style');
