@@ -1,23 +1,24 @@
 # Women's Day Celebration App 🌸
 
-A beautiful and interactive website celebrating Vietnamese Women's Day (Ngày Phụ Nữ Việt Nam 20/10) with multiple engaging questions and animated celebrations!
+A beautiful and interactive website celebrating Vietnamese Women's Day (Ngày Phụ Nữ Việt Nam 20/10) with educational questions, floating flower petals, animated effects, and a playful "No" button that moves away when you try to click it!
 
 ## ✨ Features
 
-- **Interactive Quiz**: 3 questions about Vietnamese Women's Day in Vietnamese
-- **Beautiful Animations**: Floating flower petals, smooth transitions, and confetti effects
-- **Playful "No" Button**: Moves away when you try to click it! 🎭
-- **Responsive Design**: Works perfectly on all devices
-- **Vietnamese Language**: All content in Vietnamese
-- **Custom Domain**: Available at **20-10.tuoitrevn.nl**
+- **Educational Quiz**: Interactive questions about Vietnamese Women's Day
+- **Interactive Design**: "No" button moves away when hovered over
+- **Beautiful Animations**: Floating flower petals and smooth transitions
+- **Responsive Layout**: Works perfectly on all devices
+- **Celebratory Effects**: Confetti animation and dynamic text changes
+- **Vietnamese Language**: All content in Vietnamese language
+- **Women's Day Theme**: Pink gradient background with floral elements
 
-## 🎯 User Flow
+## 🎯 Live Demo
 
-1. **Visit the site** → Question page with 3 Vietnamese questions about Women's Day
-2. **Answer all questions correctly** → Redirects to main celebration page
-3. **Click "Có, tôi muốn chúc mừng!"** → Shows full celebration with animations
-4. **Try the "Không phải bây giờ" button** → It moves away! 🎭
-5. **Enjoy the celebration** → Confetti, floating petals, and beautiful animations
+**[View Live Demo](https://HuyLo246.github.io/20-10/)**
+
+## 📸 Preview
+
+![Women's Day App Preview](public/images/20-10.png)
 
 ## 🚀 Getting Started
 
@@ -34,39 +35,41 @@ A beautiful and interactive website celebrating Vietnamese Women's Day (Ngày Ph
    cd 20-10
    ```
 
-2. Open `public/index.html` in your browser or serve it locally.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm start
+   ```
+
+4. Open http://localhost:3001 in your browser.
 
 ## 🌐 Deployment
 
-This project is configured for **GitHub Pages** deployment with a custom domain.
+This project is configured for **GitHub Pages** deployment.
 
 ### GitHub Pages Setup
 
-- **Repository**: https://github.com/HuyLo246/20-10
-- **Live Site**: https://HuyLo246.github.io/20-10/
-- **Custom Domain**: 20-10.tuoitrevn.nl
+The site is automatically deployed to GitHub Pages when pushed to the main branch.
 
-The site automatically deploys when pushed to the main branch.
+**Current Status**: ✅ Live at https://HuyLo246.github.io/20-10/
 
-## 📁 Project Structure
+## 🎮 How to Use
 
-```
-20-10/
-├── public/
-│   ├── index.html      # Redirect page (auto-redirects to question.html)
-│   ├── question.html   # Quiz page with 3 questions
-│   ├── main.html       # Main celebration page
-│   ├── css/
-│   │   └── style.css   # All styling and animations
-│   └── js/
-│       └── app.js      # Interactive functionality
-├── CNAME               # Custom domain configuration
-└── README.md           # This file
-```
+1. **Visit the site** - You'll see the question page first
+2. **Answer 3 questions** about Vietnamese Women's Day correctly
+3. **Reach the main page** with the celebration
+4. **Click "Có, tôi muốn chúc mừng!"** to see the full celebration
+5. **Try clicking "Không phải bây giờ"** - it moves away! 🎭
+6. **Enjoy the animations** - floating petals and confetti effects
 
 ## 🛠️ Technologies Used
 
 - **Frontend**: HTML5, CSS3, JavaScript
+- **Backend**: Node.js with Express.js
 - **Deployment**: GitHub Pages
 - **Language**: Vietnamese
 
