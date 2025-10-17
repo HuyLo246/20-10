@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Câu Hỏi Đặc Biệt 🌸</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌸</text></svg>">
 </head>
 <body>
@@ -80,9 +80,9 @@
                     resultMessage.className = 'result-message success';
                     resultMessage.style.display = 'block';
 
-                    // Show celebration content after 3 seconds
+                    // Redirect to main page after 3 seconds
                     setTimeout(() => {
-                        showCelebration();
+                        window.location.href = 'celebration.html';
                     }, 3000);
                 } else {
                     // Move to next question
