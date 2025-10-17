@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Chúc mừng Ngày Phụ nữ Việt Nam 20/10 - Câu hỏi đặc biệt về ngày phụ nữ Việt Nam">
-    <meta name="theme-color" content="#cc0000">
-    <title>Câu Hỏi Đặc Biệt Về Ngày Phụ Nữ Việt Nam 🌸</title>
+    <title>Câu Hỏi Đặc Biệt 🌸</title>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌸</text></svg>">
 </head>
@@ -33,18 +31,6 @@
 
                 <div id="resultMessage" class="result-message" style="display: none;"></div>
             </div>
-
-            <!-- Hidden celebration content that will be shown after completing questions -->
-            <div id="celebrationContainer" class="celebration-container" style="display: none;">
-                <div class="celebration-card">
-                    <h1>💖 Chúc Mừng Các Chị Em Phụ Nữ! 💖</h1>
-                    <p>Cảm ơn những người phụ nữ tuyệt vời đã và đang góp phần xây dựng đất nước Việt Nam giàu đẹp!</p>
-                    <img src="/images/ngày-phụnữviệt-nam-hội-liên-hiệp-phụnữviệt-nam.gif"
-                         alt="Vietnamese Women's Day Celebration"
-                         class="celebration-gif"
-                         loading="lazy">
-                </div>
-            </div>
         </div>
     </div>
 
@@ -55,8 +41,6 @@
         const currentQuestion = document.getElementById('currentQuestion');
         const progressFill = document.getElementById('progressFill');
         const progressText = document.getElementById('progressText');
-        const questionContainer = document.getElementById('questionContainer');
-        const celebrationContainer = document.getElementById('celebrationContainer');
 
         let currentQuestionIndex = 0;
         let totalQuestions = 3;
@@ -139,12 +123,72 @@
 
         function showCelebration() {
             // Hide question content
-            questionContainer.style.display = 'none';
+            document.getElementById('questionContainer').style.display = 'none';
 
-            // Show existing celebration content
-            celebrationContainer.style.display = 'flex';
+            // Create celebration content
+            const celebrationDiv = document.createElement('div');
+            celebrationDiv.className = 'celebration-container';
+            celebrationDiv.innerHTML = `
+                <div class="celebration-card">
+                    <h1>💖 Chúc Mừng Các Chị Em Phụ Nữ! 💖</h1>
+                    <p>Cảm ơn những người phụ nữ tuyệt vời đã và đang góp phần xây dựng đất nước Việt Nam giàu đẹp!</p>
+                    <img src="/images/ngày-phụnữviệt-nam-hội-liên-hiệp-phụnữviệt-nam.gif"
+                         alt="Vietnamese Women's Day Celebration"
+                         class="celebration-gif"
+                         loading="lazy">
+                </div>
+            `;
 
-            // Start floating petals animation
+            document.body.appendChild(celebrationDiv);
+
+            // Add celebration styles
+            const celebrationStyle = document.createElement('style');
+            celebrationStyle.textContent = `
+                .celebration-container {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(135deg, #ffcc00 0%, #ff6600 50%, #cc0000 100%);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    z-index: 1000;
+                }
+
+                .celebration-card {
+                    background: white;
+                    border-radius: 20px;
+                    padding: 40px;
+                    text-align: center;
+                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+                    max-width: 500px;
+                    width: 90%;
+                }
+
+                .celebration-card h1 {
+                    color: #cc0000;
+                    margin-bottom: 20px;
+                    font-size: 2rem;
+                }
+
+                .celebration-card p {
+                    color: #666;
+                    font-size: 1.1rem;
+                    margin-bottom: 25px;
+                    line-height: 1.6;
+                }
+
+                .celebration-gif {
+                    max-width: 100%;
+                    border-radius: 15px;
+                    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+                }
+            `;
+            document.head.appendChild(celebrationStyle);
+
+            // Create floating petals effect
             setInterval(() => {
                 const petals = ['🌸', '🌺', '🌷', '💐', '🌹'];
                 const petal = document.createElement('div');
@@ -201,46 +245,10 @@
                 margin: 30px 0;
             }
 
-            .celebration-container {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: linear-gradient(135deg, #ffcc00 0%, #ff6600 50%, #cc0000 100%);
-                display: none;
-                align-items: center;
-                justify-content: center;
-                z-index: 1000;
-            }
-
-            .celebration-card {
-                background: white;
-                border-radius: 20px;
-                padding: 40px;
-                text-align: center;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-                max-width: 500px;
-                width: 90%;
-            }
-
-            .celebration-card h1 {
+            .question-section h2 {
                 color: #cc0000;
                 margin-bottom: 20px;
-                font-size: 2rem;
-            }
-
-            .celebration-card p {
-                color: #666;
-                font-size: 1.1rem;
-                margin-bottom: 25px;
-                line-height: 1.6;
-            }
-
-            .celebration-gif {
-                max-width: 100%;
-                border-radius: 15px;
-                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+                font-size: 1.3rem;
             }
         `;
         document.head.appendChild(style);
