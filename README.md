@@ -57,6 +57,19 @@ The site is automatically deployed to GitHub Pages when pushed to the main branc
 
 **Current Status**: ✅ Live at https://HuyLo246.github.io/20-10/
 
+### Updating the Website
+
+To update the website:
+
+```bash
+# Make changes
+git add .
+git commit -m "Update content"
+git push origin main
+```
+
+The website will be automatically updated after a few minutes.
+
 ## 🎮 How to Use
 
 1. **Visit the site** - You'll see the question page first
@@ -68,22 +81,18 @@ The site is automatically deployed to GitHub Pages when pushed to the main branc
 
 ## 🛠️ Technologies Used
 
-- **Frontend**: HTML5, CSS3, JavaScript
-- **Backend**: Node.js with Express.js
-- **Deployment**: GitHub Pages
-- **Language**: Vietnamese
+- **Frontend**: HTML5, CSS3, JavaScript (Vanilla)
+- **Deployment**: GitHub Pages (Static hosting)
+- **Design**: Responsive, mobile-first approach
 
-## 📝 License
+## 📝 Giấy phép
 
-This project is licensed under the MIT License.
+MIT License - Xem file LICENSE để biết thêm chi tiết.
 
-## 💝 Support
+## 💝 Lời cảm ơn
 
-If you enjoy this project, please consider:
-- ⭐ Starring the repository
-- 🐛 Reporting issues
-- 🚀 Contributing improvements
+Website này dành tặng tất cả chị em phụ nữ Việt Nam tuyệt vời! 🌸
 
 ---
 
-*Made with ❤️ for all amazing women around the world! Đặc biệt dành tặng các chị em phụ nữ Việt Nam nhân ngày 20/10! 🌸*
+*Được tạo bởi HuyLo246 với ❤️* Đặc biệt dành tặng các chị em phụ nữ Việt Nam nhân ngày 20/10! 🌸*
