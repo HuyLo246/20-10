@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Câu Hỏi Đặc Biệt 🌸</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌸</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <div class="question-card">
+            <div id="questionContainer">
+                <h1 id="questionTitle">Câu Hỏi Đặc Biệt Về Ngày Phụ Nữ Việt Nam 🌸</h1>
+                <p class="subtitle">Hãy trả lời các câu hỏi để tiếp tục hành trình đặc biệt của chúng ta!</p>
+
+                <div class="question-section">
+                    <h2 id="currentQuestion">Câu hỏi 1: Ngày Phụ Nữ Việt Nam được tổ chức vào ngày nào?</h2>
+                    <div class="input-container">
+                        <input type="text" id="answerInput" placeholder="Nhập câu trả lời của bạn..." class="answer-input">
+                        <button id="submitBtn" class="btn submit-btn">Kiểm Tra</button>
+                    </div>
+                </div>
+
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <p class="progress-text" id="progressText">Câu hỏi 1/3</p>
+                </div>
+
+                <div id="resultMessage" class="result-message" style="display: none;"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const submitBtn = document.getElementById('submitBtn');
+        const answerInput = document.getElementById('answerInput');
+        const resultMessage = document.getElementById('resultMessage');
+        const currentQuestion = document.getElementById('currentQuestion');
+        const progressFill = document.getElementById('progressFill');
+        const progressText = document.getElementById('progressText');
+
+        let currentQuestionIndex = 0;
+        let totalQuestions = 3;
+
+        // Multiple questions about Women's Day in Vietnamese
+        const questions = [
+            {
+                question: "Câu hỏi 1: Ngày Phụ Nữ Việt Nam được tổ chức vào ngày nào?",
+                answers: ["20/10", "20 tháng 10", "ngày 20/10", "ngày 20 tháng 10"]
+            },
+            {
+                question: "Câu hỏi 2: Ngày Phụ Nữ Việt Nam kỷ niệm điều gì?",
+                answers: ["thành lập hội liên hiệp phụ nữ việt nam", "thành lập hội phụ nữ", "ngày thành lập hội liên hiệp phụ nữ", "kỷ niệm phụ nữ việt nam", "phụ nữ việt nam", "phụ nữ"]
+            },
+            {
+                question: "Câu hỏi 3: Biểu tượng của Ngày Phụ Nữ Việt Nam thường là loài hoa gì?",
+                answers: ["hoa sen", "hoa hồng", "hoa mai", "hoa đào"]
+            }
+        ];
+
+        function updateQuestion() {
+            if (currentQuestionIndex < questions.length) {
+                currentQuestion.textContent = questions[currentQuestionIndex].question;
+                progressText.textContent = `Câu hỏi ${currentQuestionIndex + 1}/${totalQuestions}`;
+                progressFill.style.width = `${((currentQuestionIndex + 1) / totalQuestions) * 100}%`;
+            }
+        }
+
+        function checkAnswer() {
+            const userAnswer = answerInput.value.toLowerCase().trim();
+            const currentQ = questions[currentQuestionIndex];
+
+            if (currentQ.answers.some(answer => userAnswer.includes(answer))) {
+                if (currentQuestionIndex === questions.length - 1) {
+                    // Last question answered correctly - show celebration
+                    resultMessage.textContent = '🎉 Tuyệt vời! Bạn đã trả lời đúng tất cả câu hỏi! Hãy cùng chúng tôi chúc mừng Ngày Phụ Nữ Việt Nam! 🎉';
+                    resultMessage.className = 'result-message success';
+                    resultMessage.style.display = 'block';
+
+                    // Show celebration content after 3 seconds
+                    setTimeout(() => {
+                        showCelebration();
+                    }, 3000);
+                } else {
+                    // Move to next question
+                    currentQuestionIndex++;
+                    updateQuestion();
+                    resultMessage.textContent = '🎉 Chính xác! Tiếp tục câu hỏi tiếp theo! 🎉';
+                    resultMessage.className = 'result-message success';
+                    resultMessage.style.display = 'block';
+
+                    // Clear input for next question
+                    setTimeout(() => {
+                        resultMessage.style.display = 'none';
+                        answerInput.value = '';
+                        answerInput.focus();
+                    }, 1500);
+                }
+            } else {
+                resultMessage.textContent = 'Hmm, hãy thử lại nhé! 🤔';
+                resultMessage.className = 'result-message error';
+                resultMessage.style.display = 'block';
+                answerInput.value = '';
+                answerInput.focus();
+            }
+        }
+
+        submitBtn.addEventListener('click', checkAnswer);
+
+        answerInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                checkAnswer();
+            }
+        });
+
+        // Focus on input when page loads
+        window.addEventListener('load', () => {
+            answerInput.focus();
+        });
+
+        function showCelebration() {
+            // Hide question content
+            document.getElementById('questionContainer').style.display = 'none';
+
+            // Create celebration content
+            const celebrationDiv = document.createElement('div');
+            celebrationDiv.className = 'celebration-container';
+            celebrationDiv.innerHTML = `
+                <div class="celebration-card">
+                    <h1>💖 Chúc Mừng Các Chị Em Phụ Nữ! 💖</h1>
+                    <p>Cảm ơn những người phụ nữ tuyệt vời đã và đang góp phần xây dựng đất nước Việt Nam giàu đẹp!</p>
+                    <img src="/images/ngày-phụnữviệt-nam-hội-liên-hiệp-phụnữviệt-nam.gif"
+                         alt="Vietnamese Women's Day Celebration"
+                         class="celebration-gif"
+                         loading="lazy">
+                </div>
+            `;
+
+            document.body.appendChild(celebrationDiv);
+
+            // Add celebration styles
+            const celebrationStyle = document.createElement('style');
+            celebrationStyle.textContent = `
+                .celebration-container {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(135deg, #ffcc00 0%, #ff6600 50%, #cc0000 100%);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    z-index: 1000;
+                }
+
+                .celebration-card {
+                    background: white;
+                    border-radius: 20px;
+                    padding: 40px;
+                    text-align: center;
+                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+                    max-width: 500px;
+                    width: 90%;
+                }
+
+                .celebration-card h1 {
+                    color: #cc0000;
+                    margin-bottom: 20px;
+                    font-size: 2rem;
+                }
+
+                .celebration-card p {
+                    color: #666;
+                    font-size: 1.1rem;
+                    margin-bottom: 25px;
+                    line-height: 1.6;
+                }
+
+                .celebration-gif {
+                    max-width: 100%;
+                    border-radius: 15px;
+                    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+                }
+            `;
+            document.head.appendChild(celebrationStyle);
+
+            // Create floating petals effect
+            setInterval(() => {
+                const petals = ['🌸', '🌺', '🌷', '💐', '🌹'];
+                const petal = document.createElement('div');
+                petal.textContent = petals[Math.floor(Math.random() * petals.length)];
+                petal.style.position = 'fixed';
+                petal.style.fontSize = '30px';
+                petal.style.left = Math.random() * window.innerWidth + 'px';
+                petal.style.top = window.innerHeight + 'px';
+                petal.style.pointerEvents = 'none';
+                petal.style.zIndex = '1001';
+                petal.style.animation = `floatPetal ${Math.random() * 3 + 2}s linear forwards`;
+
+                document.body.appendChild(petal);
+
+                setTimeout(() => {
+                    if (petal.parentNode) {
+                        petal.parentNode.removeChild(petal);
+                    }
+                }, 5000);
+            }, 1000);
+        }
+
+        // Add some CSS for progress bar
+        const style = document.createElement('style');
+        style.textContent = `
+            .progress-container {
+                margin: 30px 0;
+                text-align: center;
+            }
+
+            .progress-bar {
+                width: 100%;
+                height: 10px;
+                background-color: #e0e0e0;
+                border-radius: 5px;
+                overflow: hidden;
+                margin-bottom: 10px;
+            }
+
+            .progress-fill {
+                height: 100%;
+                background: linear-gradient(135deg, #4CAF50, #45a049);
+                width: 33%;
+                transition: width 0.5s ease;
+            }
+
+            .progress-text {
+                font-weight: 600;
+                color: #666;
+                margin: 0;
+            }
+
+            .question-section {
+                margin: 30px 0;
+            }
+
+            .question-section h2 {
+                color: #cc0000;
+                margin-bottom: 20px;
+                font-size: 1.3rem;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
