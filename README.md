@@ -14,7 +14,7 @@ A beautiful and interactive website celebrating Vietnamese Women's Day (Ngày Ph
 
 ## 🎯 Live Demo
 
-**[View Live Demo](https://HuyLo246.github.io/20-10/)**
+**[View Live Demo](https://20-10.tuoitrevn.nl/)**
 
 ## 📸 Preview
 
@@ -35,52 +35,55 @@ A beautiful and interactive website celebrating Vietnamese Women's Day (Ngày Ph
    cd 20-10
    ```
 
-2. Install dependencies:
+2. Open `public/index.html` in your web browser directly, or use a local server:
+
+   **Option 1: Direct File Access**
    ```bash
-   npm install
+   # Simply open the file in your browser
+   open public/index.html
    ```
 
-3. Start the development server:
+   **Option 2: Local Server (recommended for full functionality)**
    ```bash
-   npm start
+   # Using Python (if installed)
+   python -m http.server 8000
+   # Then visit http://localhost:8000/public/
    ```
 
-4. Open http://localhost:3001 in your browser.
+   **Option 3: Live Server Extension**
+   - Use VS Code Live Server extension to serve the files
 
 ## 🌐 Deployment
 
-This project is configured for **GitHub Pages** deployment.
+This project is configured for **GitHub Pages** deployment with a custom domain.
 
 ### GitHub Pages Setup
 
 The site is automatically deployed to GitHub Pages when pushed to the main branch.
 
-**Current Status**: ✅ Live at https://HuyLo246.github.io/20-10/
+**Current Status**: ✅ Live at https://20-10.tuoitrevn.nl/
+
+### Custom Domain Setup
+
+The CNAME file is configured for the custom domain `20-10.tuoitrevn.nl`. Make sure this domain points to GitHub Pages.
 
 ## 🎮 How to Use
 
 1. **Visit the site** - You'll see the question page first
 2. **Answer 3 questions** about Vietnamese Women's Day correctly
-3. **Reach the main page** with the celebration
-4. **Click "Có, tôi muốn chúc mừng!"** to see the full celebration
-5. **Try clicking "Không phải bây giờ"** - it moves away! 🎭
-6. **Enjoy the animations** - floating petals and confetti effects
+3. **Complete the quiz** - See the celebration page with animations
+4. **Try clicking "Không phải bây giờ"** - it moves away! 🎭
+5. **Enjoy the animations** - floating petals and confetti effects
 
 ## 🛠️ Technologies Used
 
-- **Frontend**: HTML5, CSS3, JavaScript
-- **Backend**: Node.js with Express.js
+- **Frontend**: HTML5, CSS3, JavaScript (Vanilla)
 - **Deployment**: GitHub Pages
 - **Language**: Vietnamese
 
 ## 📝 License
 
 This project is licensed under the MIT License.
-
-## 💝 Support
-
-If you enjoy this project, please consider:
-- ⭐ Starring the repository
 - 🐛 Reporting issues
 - 🚀 Contributing improvements
 
