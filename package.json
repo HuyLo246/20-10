@@ -1,14 +1,19 @@
 {
-  "name": "20-10-womens-day",
+  "name": "women-day-app",
   "version": "1.0.0",
-  "description": "A beautiful and interactive Women's Day celebration website",
-  "scripts": {},
-  "keywords": ["womens-day", "vietnamese", "celebration", "interactive", "women-empowerment"],
-  "author": "HuyLo246",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/HuyLo246/20-10.git"
+  "description": "A beautiful Women's Day celebration interactive website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
-  "homepage": "https://HuyLo246.github.io/20-10"
+  "keywords": ["womens-day", "celebration", "interactive", "women-empowerment"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
 }

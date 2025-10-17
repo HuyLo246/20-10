@@ -47,6 +47,38 @@ A beautiful and interactive website celebrating Vietnamese Women's Day (Ngày Ph
 
 4. Open http://localhost:3001 in your browser.
 
+### Deploying to GitHub Pages
+
+1. **Fork or Clone** this repository to your GitHub account
+
+2. **Enable GitHub Pages**:
+   - Go to your repository on GitHub
+   - Click **Settings** tab
+   - Scroll down to **Pages** section
+   - Under **Source**, select **GitHub Actions**
+
+3. **Automatic Deployment**:
+   - GitHub Actions will automatically build and deploy your site
+   - Your site will be available at `https://yourusername.github.io/20-10/`
+
+### Manual Deployment (Alternative)
+
+If you prefer manual deployment:
+
+1. Push your code to the `main` branch:
+   ```bash
+   git add .
+   git commit -m "Deploy to GitHub Pages"
+   git push origin main
+   ```
+
+2. Enable GitHub Pages:
+   - Go to **Settings > Pages**
+   - Select **main** branch as source
+   - Click **Save**
+
+3. Your site will be available at `https://yourusername.github.io/20-10/`
+
 ## 🌐 Deployment
 
 This project is configured for **GitHub Pages** deployment.
@@ -56,19 +88,6 @@ This project is configured for **GitHub Pages** deployment.
 The site is automatically deployed to GitHub Pages when pushed to the main branch.
 
 **Current Status**: ✅ Live at https://HuyLo246.github.io/20-10/
-
-### Updating the Website
-
-To update the website:
-
-```bash
-# Make changes
-git add .
-git commit -m "Update content"
-git push origin main
-```
-
-The website will be automatically updated after a few minutes.
 
 ## 🎮 How to Use
 
@@ -81,18 +100,22 @@ The website will be automatically updated after a few minutes.
 
 ## 🛠️ Technologies Used
 
-- **Frontend**: HTML5, CSS3, JavaScript (Vanilla)
-- **Deployment**: GitHub Pages (Static hosting)
-- **Design**: Responsive, mobile-first approach
+- **Frontend**: HTML5, CSS3, JavaScript
+- **Backend**: Node.js with Express.js
+- **Deployment**: GitHub Pages
+- **Language**: Vietnamese
 
-## 📝 Giấy phép
+## 📝 License
 
-MIT License - Xem file LICENSE để biết thêm chi tiết.
+This project is licensed under the MIT License.
 
-## 💝 Lời cảm ơn
+## 💝 Support
 
-Website này dành tặng tất cả chị em phụ nữ Việt Nam tuyệt vời! 🌸
+If you enjoy this project, please consider:
+- ⭐ Starring the repository
+- 🐛 Reporting issues
+- 🚀 Contributing improvements
 
 ---
 
-*Được tạo bởi HuyLo246 với ❤️* Đặc biệt dành tặng các chị em phụ nữ Việt Nam nhân ngày 20/10! 🌸*
+*Made with ❤️ for all amazing women around the world! Đặc biệt dành tặng các chị em phụ nữ Việt Nam nhân ngày 20/10! 🌸*
